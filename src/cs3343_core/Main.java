@@ -11,12 +11,13 @@ public class Main {
 		Console.exec("get route cost e f");
 		Console.exec("this");
 
-		Report.printLine();
+		Console.exec("report print line");
 		for (int i = 0; i < 10; i++) {
-			Contacts c = new Contacts("Contact_" + i, (int) Math.random() * 100 % 90);
-			c.chooseApartment();
-			System.out.println(Report.getSectionContact(c));
+			System.out.print("contact add Contact_" + i + " " + (int) Math.random() * 100 % 90);
+			Console.exec("contact add Contact_" + i + " " + (int) Math.random() * 100 % 90);
+			Console.exec("contact choose_apartment this");
+			Console.exec("report print contact this");
 		}
-
+		
 	}
 }

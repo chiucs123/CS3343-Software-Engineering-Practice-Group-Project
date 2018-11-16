@@ -392,9 +392,9 @@ public class Map {
 
 	public static void printMST() {
 		ArrayList<Connection> result = Map.getMST();
-		System.out.print("MST: ");
+		System.out.println("MST: ");
 		for (Connection c : result) {
-			System.out.print(c.toString());
+			System.out.println(c.toString());
 		}
 		System.out.println();
 	}

@@ -76,8 +76,31 @@ public class Console {
 				}
 				unsetHandles();
 				break;
+			case "choose_apartment":
+				if (params[2].equals("this")) {
+					((Contacts) lastHandle).chooseApartment();
+				}
+				break;
 			}
+
 			resetRedo();
+			break;
+		case "report":
+			switch (params[1]) {
+			case "print":
+				switch (params[2]) {
+				case "line":
+					Report.printLine();
+					break;
+				case "contact":
+					if (params[3].equals("this")) {
+						c = new CmdReportPrintContacts((Contacts) lastHandle);
+						break;
+					}
+				}
+				qualifyUndo = false;
+				break;
+			}
 			break;
 		case "get":
 			switch (params[1]) {

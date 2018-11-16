@@ -26,10 +26,8 @@ public class ResourceManager {
 			started = true;
 
 			System.out.println("Printing Distance");
-			Map.getInstance();
 			Map.printDistances();
 			System.out.println("Listing MST");
-			Map.getInstance();
 			Map.printMST();
 		}
 		return started;
