@@ -1,4 +1,4 @@
-package cs3343_core;
+package cs3343_core.console;
 
 public abstract class Command {
 

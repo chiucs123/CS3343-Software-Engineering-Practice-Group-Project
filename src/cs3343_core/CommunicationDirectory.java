@@ -2,6 +2,8 @@ package cs3343_core;
 
 import java.util.*;
 
+import cs3343_core.node.Estate;
+
 public class CommunicationDirectory {
 	private Estate owner = null;
 	private ArrayList<Contacts> directory = new ArrayList<>();

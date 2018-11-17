@@ -1,6 +1,7 @@
 package cs3343_core;
 
 import java.util.*;
+import cs3343_core.node.*;
 
 public class Map {
 	private static final Map instance = new Map();
@@ -138,10 +139,6 @@ public class Map {
 
 	public static ArrayList<Estate> getEstateList() {
 		return estates;
-	}
-
-	public static Map getInstance() {
-		return instance;
 	}
 
 	public static ArrayList<Connection> getMST() {
@@ -385,5 +382,9 @@ public class Map {
 
 	private Map() {
 
+	}
+
+	public static int getCode() {
+		return instance.hashCode();
 	}
 }

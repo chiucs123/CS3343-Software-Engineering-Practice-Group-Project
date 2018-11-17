@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import org.junit.Test;
 import cs3343_core.*;
+import cs3343_core.node.Node;
+import cs3343_core.resources.ResourceManager;
 
 public class Testcases {
 

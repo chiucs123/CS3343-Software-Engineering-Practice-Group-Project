@@ -1,4 +1,4 @@
-package cs3343_core;
+package cs3343_core.node;
 
 public class Station extends Node {
 	private static final String type = "station";

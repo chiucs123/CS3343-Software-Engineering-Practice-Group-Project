@@ -1,6 +1,9 @@
-package cs3343_core;
+package cs3343_core.node;
 
 import java.util.*;
+
+import cs3343_core.CommunicationDirectory;
+import cs3343_core.Contacts;
 
 public class Estate extends Node {
 	private static final String type = "estate";

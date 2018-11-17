@@ -1,4 +1,6 @@
-package cs3343_core;
+package cs3343_core.resources;
+
+import cs3343_core.Map;
 
 public class ResourceManager {
 
@@ -20,7 +22,7 @@ public class ResourceManager {
 			System.out.println("Resource Manager is already started!");
 		} else {
 			System.out.println("Starting Resource Manager (" + this.hashCode() + ").");
-			System.out.println("Connected to map (" + Map.getInstance().hashCode() + ").");
+			System.out.println("Connected to map (" + Map.getCode() + ").");
 			System.out.println("Initialising map...");
 			Map.initialiseMap(ini_number_of_nodes, ini_number_of_estates, ini_number_of_stations);
 			started = true;
@@ -34,7 +36,6 @@ public class ResourceManager {
 	}
 
 	public void getRoute(char from, char to) {
-		Map.getInstance();
 		System.out.println(Map.getRouteString(from, to));
 	}
 }

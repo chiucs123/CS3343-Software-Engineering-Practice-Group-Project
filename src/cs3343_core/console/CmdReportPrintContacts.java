@@ -1,4 +1,7 @@
-package cs3343_core;
+package cs3343_core.console;
+
+import cs3343_core.Contacts;
+import cs3343_core.Report;
 
 public class CmdReportPrintContacts extends Command {
 

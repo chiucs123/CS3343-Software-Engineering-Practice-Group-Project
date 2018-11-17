@@ -1,6 +1,9 @@
-package cs3343_core;
+package cs3343_core.console;
 
 import java.util.*;
+
+import cs3343_core.Contacts;
+import cs3343_core.Report;
 
 public class Console {
 	private static final Console instance = new Console();

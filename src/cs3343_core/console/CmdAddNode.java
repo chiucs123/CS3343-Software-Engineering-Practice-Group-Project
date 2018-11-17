@@ -1,4 +1,7 @@
-package cs3343_core;
+package cs3343_core.console;
+
+import cs3343_core.Map;
+import cs3343_core.node.Node;
 
 public class CmdAddNode extends Command {
 

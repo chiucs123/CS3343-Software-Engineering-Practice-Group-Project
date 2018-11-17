@@ -1,5 +1,7 @@
 package cs3343_core;
 
+import cs3343_core.console.*;
+
 public class Main {
 
 	public static void main(String args[]) {

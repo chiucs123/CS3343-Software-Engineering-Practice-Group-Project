@@ -1,4 +1,6 @@
-package cs3343_core;
+package cs3343_core.console;
+
+import cs3343_core.resources.ResourceManager;
 
 public class CmdStart extends Command {
 

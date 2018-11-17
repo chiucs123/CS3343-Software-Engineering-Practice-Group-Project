@@ -2,6 +2,10 @@ package cs3343_core;
 
 import java.util.*;
 
+import cs3343_core.node.Apartments;
+import cs3343_core.node.Node;
+import cs3343_core.node.Station;
+
 public class Report {
 	private static int print_width = 120;
 	private static int print_height = 256;

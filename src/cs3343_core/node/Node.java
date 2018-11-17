@@ -1,4 +1,4 @@
-package cs3343_core;
+package cs3343_core.node;
 
 public class Node {
 	protected double posX = 0.0;

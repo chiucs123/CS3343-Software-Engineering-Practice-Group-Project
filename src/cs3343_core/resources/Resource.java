@@ -1,4 +1,4 @@
-package cs3343_core;
+package cs3343_core.resources;
 
 public abstract interface Resource {
 	public static Resource water = (Resource) new Water();

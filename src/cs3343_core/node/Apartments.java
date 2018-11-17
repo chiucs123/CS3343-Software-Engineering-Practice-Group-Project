@@ -1,4 +1,6 @@
-package cs3343_core;
+package cs3343_core.node;
+
+import cs3343_core.Contacts;
 
 public class Apartments {
 
