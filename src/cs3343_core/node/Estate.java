@@ -6,6 +6,8 @@ import cs3343_core.CommunicationDirectory;
 import cs3343_core.Contacts;
 
 public class Estate extends Node {
+
+	public static ArrayList<Estate> instances = new ArrayList<>();
 	private static final String type = "estate";
 	private String[] randomNames = { "Tai", "Ho", "King", "Hoi", "Kam", "Tsin", "Fai", "Fat", "Fei", "On", "Pak", "Lau",
 			"Bo", "Ease", "Wah", "Tik", "Tak", "Wan", "Wen", "Dou", "Dok", "Xin", "Mei", "Lai", "Lei", "Po", "Lean",
@@ -60,16 +62,19 @@ public class Estate extends Node {
 
 	public Estate() {
 		this.setupEstate();
+		instances.add(this);
 	}
 
 	public Estate(char index) {
 		super(index);
 		this.setupEstate();
+		instances.add(this);
 	}
 
 	public Estate(char index, double x, double y) {
 		super(index, x, y);
 		this.setupEstate();
+		instances.add(this);
 
 	}
 

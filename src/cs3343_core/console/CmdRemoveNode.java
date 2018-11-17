@@ -8,7 +8,7 @@ public class CmdRemoveNode extends Command {
 	private Node n = null;
 
 	public CmdRemoveNode(char code) {
-		n = Map.getNodeByCode(code);
+		n = Node.getNodeByCode(code);
 		if (n != null) {
 			Map.removeNode(n);
 		}

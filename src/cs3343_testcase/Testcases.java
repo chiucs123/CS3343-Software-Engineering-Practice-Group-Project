@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import org.junit.Test;
 import cs3343_core.*;
+import cs3343_core.node.Connection;
 import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;
 
@@ -13,14 +14,14 @@ public class Testcases {
 	@Test
 	public void testcase_1() {
 		ResourceManager.getInstance().start();
-		Node result = Map.getNodeByCode('z');
+		Node result = Node.getNodeByCode('z');
 		assertEquals(null, result);
 	}
 
 	@Test
 	public void testcase_2() {
 		ResourceManager.getInstance().start();
-		Node result = Map.getNodeByCode('a');
+		Node result = Node.getNodeByCode('a');
 		assertEquals('a', result.getIndex());
 	}
 

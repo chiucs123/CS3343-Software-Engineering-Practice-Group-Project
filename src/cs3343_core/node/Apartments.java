@@ -1,9 +1,12 @@
 package cs3343_core.node;
 
+import java.util.ArrayList;
+
 import cs3343_core.Contacts;
 
 public class Apartments {
 
+	public static ArrayList<Apartments> instances = new ArrayList<>();
 	private Estate estate = null;
 	private int floor = 0;
 	private char room = 'A';
@@ -12,6 +15,7 @@ public class Apartments {
 		this.estate = estate;
 		this.floor = floor;
 		this.room = room;
+		instances.add(this);
 	}
 
 	public String getAddress() {

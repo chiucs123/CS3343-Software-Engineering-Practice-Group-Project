@@ -1,6 +1,4 @@
-package cs3343_core;
-
-import cs3343_core.node.Node;
+package cs3343_core.node;
 
 public class Connection {
 	private Node a = null;

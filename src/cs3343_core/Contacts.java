@@ -65,7 +65,7 @@ public class Contacts {
 	}
 
 	public Apartments chooseApartment() {
-		ArrayList<Estate> estates = Map.getEstateList();
+		ArrayList<Estate> estates = Estate.instances;
 		Estate e = estates.get((int) (Math.random() * Math.pow(10.0, (estates.size() + "").length()) % estates.size()));
 		ArrayList<Integer> floor = e.getFloorList();
 		int f = floor.get((int) (Math.random() * Math.pow(10.0, (floor.size() + "").length()) % floor.size()));
