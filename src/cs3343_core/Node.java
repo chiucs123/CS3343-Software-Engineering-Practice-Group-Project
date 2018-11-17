@@ -17,11 +17,6 @@ public class Node {
 		this.posY = Math.random() * 100 + Math.random();
 	}
 
-	public Node(double posX, double poxY, double posY) {
-		this.posX = posX;
-		this.posY = posY;
-	}
-
 	public Node(char index, double posX, double posY) {
 		this.index = index;
 		this.posX = posX;
@@ -42,7 +37,7 @@ public class Node {
 	}
 
 	public String toString() {
-		return String.format("%12d - [%6.2f , %6.2f]", this.hashCode(), this.getPositionX(), this.getPositionY());
+		return String.format("[%s] %12d - [%6.2f , %6.2f]", getType(), hashCode(), getPositionX(), getPositionY());
 	}
 
 	public String getType() {
@@ -51,5 +46,9 @@ public class Node {
 
 	public char getIndex() {
 		return index;
+	}
+
+	public int getCode() {
+		return this.hashCode();
 	}
 }

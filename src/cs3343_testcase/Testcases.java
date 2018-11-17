@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import org.junit.Test;
 import cs3343_core.*;
 
-@SuppressWarnings("unused")
 public class Testcases {
 
 	@Test

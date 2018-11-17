@@ -11,15 +11,6 @@ public class Station extends Node {
 		super(index, x, y);
 	}
 
-	public char getIndex() {
-		return super.getIndex();
-	}
-
-	@Override
-	public String toString() {
-		return String.format("%12d - [%6.2f , %6.2f]", this.hashCode(), this.getPositionX(), this.getPositionY());
-	}
-
 	@Override
 	public String getType() {
 		return type;

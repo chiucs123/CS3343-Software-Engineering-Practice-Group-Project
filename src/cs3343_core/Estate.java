@@ -86,20 +86,12 @@ public class Estate extends Node {
 		return name;
 	}
 
-	public int getCode() {
-		return this.hashCode();
-	}
-
 	public int getFloors() {
 		return floors.size();
 	}
 
 	public CommunicationDirectory getCommunicationDirectory() {
 		return cmd;
-	}
-
-	public char getIndex() {
-		return super.getIndex();
 	}
 
 	public ArrayList<Apartments> getApartmentsByFloor(int floor) {
@@ -112,12 +104,6 @@ public class Estate extends Node {
 			}
 		}
 		return result;
-	}
-
-	@Override
-	public String toString() {
-		return this.hashCode() + " - " + String.format("[%6.2f , %6.2f]", this.getPositionX(), this.getPositionY())
-				+ " - " + this.getName();
 	}
 
 	@Override

@@ -28,19 +28,11 @@ public class Contacts {
 	}
 
 	public String getAddress() {
-		if (getPropertyCount() > 0) {
-			return apartments.get(0).getAddress();
-		} else {
-			return "Nil";
-		}
+		return getAddress(0);
 	}
 
 	public String getMultilineAddress() {
-		if (getPropertyCount() > 0) {
-			return apartments.get(0).getMultilineAddress();
-		} else {
-			return "Nil";
-		}
+		return getMultilineAddress(0);
 	}
 
 	public String getAddress(int index) {
@@ -78,8 +70,10 @@ public class Contacts {
 				.get((int) (Math.random() * Math.pow(10.0, (apartments.size() + "").length()) % apartments.size()));
 		if (this.bindProperty(a)) {
 			e.moveIn(this);
+			return a;
+		}else {
+			return null;
 		}
-		return a;
 	}
 
 	public int getPropertyCount() {
@@ -91,7 +85,7 @@ public class Contacts {
 	}
 
 	public Apartments getApartment() {
-		return apartments.get(0);
+		return getApartment(0);
 	}
 
 	public Apartments getApartment(int index) {
@@ -99,7 +93,7 @@ public class Contacts {
 	}
 
 	public Station checkNearestStation() {
-		return Map.determineNearestStation(apartments.get(0));
+		return checkNearestStation(0);
 	}
 
 	public Station checkNearestStation(int index) {
@@ -107,8 +101,7 @@ public class Contacts {
 	}
 
 	public double checkNearestStationDistance() {
-		Station nearest = Map.determineNearestStation(apartments.get(0));
-		return nearest.distanceTo(apartments.get(0).getEstate());
+		return checkNearestStationDistance(0);
 	}
 
 	public double checkNearestStationDistance(int index) {
