@@ -2,6 +2,7 @@ package cs3343_core;
 
 import java.util.*;
 import cs3343_core.node.*;
+import cs3343_core.sorters.SortByDistance;
 
 public class Map {
 	private static final Map instance = new Map();
