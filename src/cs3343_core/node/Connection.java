@@ -1,6 +1,10 @@
 package cs3343_core.node;
 
+import java.util.ArrayList;
+
 public class Connection {
+	
+	public ArrayList<Connection> instances = new ArrayList<>();
 	private Node a = null;
 	private Node b = null;
 	private double distance = 0.0;
@@ -11,17 +15,18 @@ public class Connection {
 		this.b = b;
 		this.distance = a.distanceTo(b);
 		this.enabled = true;
+		instances.add(this);
 	}
 
 	public boolean hasNode(Node n) {
 		return n.equals(a) || n.equals(b);
 	}
 
-	public Node getA() {
+	public Node getNodeA() {
 		return a;
 	}
 
-	public Node getB() {
+	public Node getNodeB() {
 		return b;
 	}
 

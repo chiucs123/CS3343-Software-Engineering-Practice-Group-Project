@@ -5,6 +5,8 @@ import cs3343_core.node.*;
 import cs3343_core.sorters.SortByDistance;
 
 public class Map {
+
+	public static boolean debug = false;
 	private static final Map instance = new Map();
 	private static boolean initialised = false;
 
@@ -57,10 +59,10 @@ public class Map {
 		ArrayList<Connection> options = getConnectionsByNode(n);
 		ArrayList<Node> result = new ArrayList<>();
 		for (Connection c : options) {
-			if (c.getA().equals(n)) {
-				result.add(c.getB());
+			if (c.getNodeA().equals(n)) {
+				result.add(c.getNodeB());
 			} else {
-				result.add(c.getA());
+				result.add(c.getNodeA());
 			}
 		}
 		return result;
@@ -129,8 +131,8 @@ public class Map {
 		ArrayList<Node> nodesInTree = new ArrayList<>();
 		ArrayList<Connection> result = new ArrayList<>();
 		for (Connection c : connections) {
-			Node a = c.getA();
-			Node b = c.getB();
+			Node a = c.getNodeA();
+			Node b = c.getNodeB();
 			if (!(nodesInTree.contains(a) && nodesInTree.contains(b))) {
 				result.add(c);
 				nodesInTree.add(a);
@@ -167,10 +169,10 @@ public class Map {
 				int minIndex = -1;
 				for (Connection c : connections) {
 					int index = Node.instances.indexOf(current);
-					if (c.getA().equals(current)) {
-						index = Node.instances.indexOf(c.getB());
+					if (c.getNodeA().equals(current)) {
+						index = Node.instances.indexOf(c.getNodeB());
 					} else {
-						index = Node.instances.indexOf(c.getA());
+						index = Node.instances.indexOf(c.getNodeA());
 					}
 					if (distance.get(index) > c.getDistance()) {
 						distance.set(index, c.getDistance());
@@ -228,7 +230,7 @@ public class Map {
 		Node pointer = from;
 		result.add(from);
 		for (Connection c : route) {
-			Node adding = (c.getA().getIndex() == pointer.getIndex() ? c.getB() : c.getA());
+			Node adding = (c.getNodeA().getIndex() == pointer.getIndex() ? c.getNodeB() : c.getNodeA());
 			if (result.contains(adding)) {
 
 			} else {
@@ -282,45 +284,56 @@ public class Map {
 	public static void initialiseMap(int nodes, int estates, int stations) {
 		for (int i = 0; i < nodes; i++) {
 			Node n = addNode("node", (char) ((int) 'a' + i));
-			System.out.println("Map added [" + i + "] " + n.toString());
+			if (debug) {
+				System.out.println("Map added [" + i + "] " + n.toString());
+			}
 		}
 		for (int i = 0; i < estates; i++) {
 			Node e = addNode("estate", (char) ((int) 'A' + i));
-			System.out.println("Map added [" + i + "] " + e.toString());
+			if (debug) {
+				System.out.println("Map added [" + i + "] " + e.toString());
+			}
 		}
 		for (int i = 0; i < stations; i++) {
 			Node e = addNode("stations", (char) ((int) '1' + i));
-			System.out.println("Map added [" + i + "] " + e.toString());
+			if (debug) {
+				System.out.println("Map added [" + i + "] " + e.toString());
+			}
 		}
 		initialised = true;
 	}
 
-	public static void printDistances() {
+	public static String printDistances() {
+		ArrayList<String> lines = new ArrayList<>();
+		String result = "";
 		if (initialised) {
 			for (int i = 0; i < Node.instances.size() + 1; i++) {
-				System.out.print("________");
+				lines.add("________");
 			}
-			System.out.println();
+			lines.add("\n");
 
-			System.out.print("______| ");
+			lines.add("______| ");
 			for (Node n1 : Node.instances) {
-				System.out.print(String.format("_____%c| ", n1.getIndex()));
+				lines.add(String.format("_____%c| ", n1.getIndex()));
 			}
-			System.out.println();
+			lines.add("\n");
 
 			for (Node n1 : Node.instances) {
-				System.out.print(String.format("     %c| ", n1.getIndex()));
+				lines.add(String.format("     %c| ", n1.getIndex()));
 				for (Node n2 : Node.instances) {
-					System.out.print(String.format("%6.2f| ", n1.distanceTo(n2)));
+					lines.add(String.format("%6.2f| ", n1.distanceTo(n2)));
 				}
-				System.out.println();
+				lines.add("\n");
 			}
 
 			for (int i = 0; i < Node.instances.size() + 1; i++) {
-				System.out.print("________");
+				lines.add("________");
 			}
-			System.out.println();
+			lines.add("\n");
 		}
+		result = String.join("", lines);
+		System.out.println(result);
+		return result;
 	}
 
 	public static void printMST() {

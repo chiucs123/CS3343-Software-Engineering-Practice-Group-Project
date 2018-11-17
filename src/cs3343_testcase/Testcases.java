@@ -13,21 +13,21 @@ public class Testcases {
 
 	@Test
 	public void testcase_1() {
-		ResourceManager.getInstance().start();
+		ResourceManager.start();
 		Node result = Node.getNodeByCode('z');
 		assertEquals(null, result);
 	}
 
 	@Test
 	public void testcase_2() {
-		ResourceManager.getInstance().start();
+		ResourceManager.start();
 		Node result = Node.getNodeByCode('a');
 		assertEquals('a', result.getIndex());
 	}
 
 	@Test
 	public void testcase_3() {
-		ResourceManager.getInstance().start();
+		ResourceManager.start();
 		ArrayList<Connection> result = Map.getConnectionsByNode('a');
 		assertEquals(false, result.isEmpty());
 	}

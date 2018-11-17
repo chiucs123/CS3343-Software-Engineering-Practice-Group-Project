@@ -7,9 +7,9 @@ import cs3343_core.node.Node;
 import cs3343_core.node.Station;
 
 public class Report {
-	private static int print_width = 120;
-	private static int print_height = 256;
-	private static boolean pagintation = true;
+	private static final int print_width = 120;
+	private static final int print_height = 256;
+	private static final boolean pagintation = true;
 
 	public static String getDivisionLine() {
 		String line = "";

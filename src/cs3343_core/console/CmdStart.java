@@ -5,7 +5,7 @@ import cs3343_core.resources.ResourceManager;
 public class CmdStart extends Command {
 
 	public CmdStart() {
-		ResourceManager.getInstance().start();
+		ResourceManager.start();
 	}
 
 	@Override

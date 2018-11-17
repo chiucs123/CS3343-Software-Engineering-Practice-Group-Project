@@ -5,7 +5,7 @@ import cs3343_core.resources.ResourceManager;
 public class CmdGetRoute extends Command {
 
 	public CmdGetRoute(char from, char to) {
-		ResourceManager.getInstance().getRoute(from, to);
+		ResourceManager.getRoute(from, to);
 	}
 
 	@Override
