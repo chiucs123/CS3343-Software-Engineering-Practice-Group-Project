@@ -17,6 +17,16 @@ public class Contacts {
 		this.name = name;
 		this.age = age;
 		this.id = this.hashCode();
+		contacts.add(this);
+	}
+
+	public static Contacts getContactByName(String name) {
+		for(Contacts c : contacts) {
+			if(c.getName().equals(name)) {
+				return c;
+			}
+		}
+		return null;
 	}
 
 	public String getName() {
@@ -75,7 +85,7 @@ public class Contacts {
 		if (this.bindProperty(a)) {
 			e.moveIn(this);
 			return a;
-		}else {
+		} else {
 			return null;
 		}
 	}

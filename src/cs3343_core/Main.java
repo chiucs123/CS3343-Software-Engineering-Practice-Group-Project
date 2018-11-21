@@ -13,7 +13,7 @@ public class Main {
 		while (true) {
 			System.out.print("> ");
 			String s = in.nextLine();
-			if (s.trim().toLowerCase().equals("exit")) {
+			if (s.trim().toLowerCase().equals("exit") || s.trim().toLowerCase().equals("^c")) {
 				System.out.println("Bye!");
 				in.close();
 				return;
