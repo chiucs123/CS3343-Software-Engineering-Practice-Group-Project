@@ -5,7 +5,7 @@ import cs3343_core.Map;
 public class CmdGetCostRoute extends Command {
 
 	public CmdGetCostRoute(char from, char to) {
-		Map.getRouteNodesCost(from, to);
+		System.out.println(Map.getRouteNodesCost(from, to));
 	}
 
 	@Override

@@ -29,6 +29,7 @@ public class Console {
 	}
 
 	public static Command exec(String cmd) {
+		cmd = cmd.replaceAll("\\s+", " ").trim();
 		String[] params = cmd.split(" ");
 		Command c = null;
 		boolean qualifyUndo = true;
@@ -63,6 +64,9 @@ public class Console {
 					System.out.println("Node add operation expecting exactly 1 parameter! Usage: node remove <index>.");
 				}
 				unsetHandles();
+				break;
+			default:
+				System.out.println("Unknown operation: " + params[1] + "in node.");
 				break;
 			}
 			resetRedo();
@@ -100,6 +104,9 @@ public class Console {
 							"Contact add operation expecting exactly 1 parameter! Usage: contact choose_apartment <name|this>.");
 				}
 				break;
+			default:
+				System.out.println("Unknown operation: " + params[1] + "in contact.");
+				break;
 			}
 
 			resetRedo();
@@ -116,8 +123,14 @@ public class Console {
 						c = new CmdReportPrintContacts((Contacts) lastHandle);
 						break;
 					}
+				default:
+					System.out.println("Unknown print type: " + params[2] + "in report print.");
+					break;
 				}
 				qualifyUndo = false;
+				break;
+			default:
+				System.out.println("Unknown operation: " + params[1] + "in report.");
 				break;
 			}
 			break;
@@ -137,7 +150,13 @@ public class Console {
 					}
 					qualifyUndo = false;
 					break;
+				default:
+					System.out.println("Unknown insight: " + params[2] + "in get route.");
+					break;
 				}
+				break;
+			default:
+				System.out.println("Unknown entity: " + params[1] + "in get.");
 				break;
 			}
 			break;
@@ -189,6 +208,8 @@ public class Console {
 			System.out.println("- get <entity: route> <insight: path/cost>                      ");
 			System.out.println("      Namely to get information of a certain entity and get its ");
 			System.out.println("      insights, or useful datum, via on-screen display.         ");
+			System.out.println("- this                                                          ");
+			System.out.println("-     Print the last handled object.                            ");
 			System.out.println("- help                                                          ");
 			System.out.println("- ?                                                             ");
 			System.out.println("-     Print this help page again.                               ");
