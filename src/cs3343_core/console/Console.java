@@ -42,11 +42,12 @@ public class Console {
 		case "node":
 			switch (params[1]) {
 			case "add":
-				if (params.length == 5) {
-					c = new CmdAddNode(params[2], (char) params[3].charAt(0), Double.parseDouble(params[4]),
-							Double.parseDouble(params[5]));
-				} else if (params.length == 3) {
+				if (params.length == 6) {
+					c = new CmdAddNode(params[2], (char) params[3].charAt(0), Double.parseDouble(params[4]), Double.parseDouble(params[5]));
+				} else if (params.length == 4) {
 					c = new CmdAddNode(params[2], (char) params[3].charAt(0));
+				}else {
+					System.out.println("Node add operation expecting exactly 2 or 4 parameters! Usage: node add <type> [x] [y].");
 				}
 				if (c != null) {
 					unsetHandles();
@@ -56,6 +57,8 @@ public class Console {
 			case "remove":
 				if (params.length == 3) {
 					c = new CmdRemoveNode((char) params[2].charAt(0));
+				}else {
+					System.out.println("Node add operation expecting exactly 1 parameter! Usage: node remove <index>.");
 				}
 				unsetHandles();
 				break;
@@ -96,7 +99,7 @@ public class Console {
 					Report.printLine();
 					break;
 				case "contact":
-					if (params[3].equals("this")) {
+					if (params.length > 3 && params[3].equals("this")) {
 						c = new CmdReportPrintContacts((Contacts) lastHandle);
 						break;
 					}

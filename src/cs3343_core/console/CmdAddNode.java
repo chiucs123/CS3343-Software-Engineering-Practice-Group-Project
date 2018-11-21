@@ -16,6 +16,11 @@ public class CmdAddNode extends Command {
 		this.type = type;
 		this.index = index;
 		n = Map.addNode(type, index);
+		if (n == null) {
+			System.out.println("Node add operation failed.");
+		} else {
+			System.out.println("Node added. " + n.toString());
+		}
 		hasLocation = false;
 	}
 
@@ -25,6 +30,11 @@ public class CmdAddNode extends Command {
 		this.x = x;
 		this.y = y;
 		n = Map.addNode(type, index, x, y);
+		if (n == null) {
+			System.out.println("Node add operation failed.");
+		} else {
+			System.out.println("Node added. " + n.toString());
+		}
 		hasLocation = true;
 	}
 

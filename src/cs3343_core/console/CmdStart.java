@@ -5,7 +5,11 @@ import cs3343_core.resources.ResourceManager;
 public class CmdStart extends Command {
 
 	public CmdStart() {
-		ResourceManager.start();
+		if(ResourceManager.start()) {
+			System.out.println("Resource Manager is now running.");
+		}else{
+			System.out.println("Resource Manager is already running.");
+		}
 	}
 
 	@Override

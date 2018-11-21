@@ -7,9 +7,9 @@ public class ResourceManager {
 	private static final ResourceManager instance = new ResourceManager();
 	private static boolean started = false;
 	private static boolean debug = false;
-	private static final int ini_number_of_nodes = 5;
-	private static final int ini_number_of_estates = 2;
-	private static final int ini_number_of_stations = 2;
+	private static final int ini_number_of_nodes = 0;
+	private static final int ini_number_of_estates = 0;
+	private static final int ini_number_of_stations = 0;
 
 	private ResourceManager() {
 	}

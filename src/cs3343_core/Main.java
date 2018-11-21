@@ -1,23 +1,25 @@
 package cs3343_core;
 
+import java.util.Scanner;
+
 import cs3343_core.console.*;
 
 public class Main {
 
 	public static void main(String args[]) {
 		System.out.println("Welcome to CS3343 Software Engineering Practice Group Project.");
-		Console.exec("start");
-		Console.exec("start");
-		Console.exec("get route path a d");
-		Console.exec("this");
-		Console.exec("get route cost e f");
-		Console.exec("this");
 
-		Console.exec("report print line");
-		for (int i = 0; i < 10; i++) {
-			Console.exec("contact add Contact_" + i + " " + (int) Math.random() * 100 % 90);
-			Console.exec("contact choose_apartment this");
-			Console.exec("report print contact this");
+		Scanner in = new Scanner(System.in);
+		while (true) {
+			System.out.print("> ");
+			String s = in.nextLine();
+			if (s.trim().toLowerCase().equals("exit")) {
+				System.out.println("Bye!");
+				in.close();
+				return;
+			} else {
+				Console.exec(s.trim());
+			}
 		}
 		
 	}

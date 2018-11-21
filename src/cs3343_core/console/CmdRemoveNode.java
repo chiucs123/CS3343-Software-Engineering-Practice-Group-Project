@@ -11,6 +11,8 @@ public class CmdRemoveNode extends Command {
 		n = Node.getNodeByCode(code);
 		if (n != null) {
 			Map.removeNode(n);
+		} else {
+			System.out.println("Node " + code + " does not exist.");
 		}
 	}
 
