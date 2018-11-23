@@ -31,4 +31,23 @@ public class Testcases {
 		ArrayList<Connection> result = Map.getConnectionsByNode('a');
 		assertEquals(false, result.isEmpty());
 	}
+
+	@Test
+	public void testcase_4() {
+		ResourceManager.start();
+		ArrayList<Node> list = new ArrayList<>();
+		list.add(Map.addNode("node", 'a'));
+		list.add(Map.addNode("node", 'b'));
+		list.add(Map.addNode("node", 'c'));
+		list.add(Map.addNode("station", 's'));
+
+		Connection c1 = new Connection(list.get(0), list.get(1));		
+		Connection c2 = Map.getConnectionsByNode(list.get(0), list.get(1));
+		
+		boolean isEquals = c1.equals(c2);
+//		System.out.println("c1=" + c1);
+//		System.out.println("c2=" + c2);
+		assertEquals(isEquals, true);
+	}
+
 }

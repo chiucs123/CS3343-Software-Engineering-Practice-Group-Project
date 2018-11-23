@@ -78,4 +78,8 @@ public class Node {
 		}
 		return null;
 	}
+	
+	public boolean equals(Node n) {
+		return this.getIndex() == n.getIndex();
+	}
 }

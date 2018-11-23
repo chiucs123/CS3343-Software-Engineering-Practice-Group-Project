@@ -43,4 +43,9 @@ public class Connection {
 		return a.getIndex() + " <--" + String.format("%6.2f", distance) + "--> " + b.getIndex()
 				+ (enabled ? "" : " (disabled)");
 	}
+	
+	public boolean equals(Connection c) {
+		return (this.a.equals(c.a) && this.b.equals(c.b)) || (this.a.equals(c.b) && this.b.equals(c.a));
+	}
+	
 }
