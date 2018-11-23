@@ -102,7 +102,7 @@ public class Map {
 	}
 
 	public static Connection getConnectionsByNode(Node n1, Node n2) {
-		ArrayList<Connection> mst = getMST();
+		ArrayList<Connection> mst = getConnections();
 		for (Connection c : mst) {
 			if (c.hasNode(n1) && c.hasNode(n2)) {
 				return c;
