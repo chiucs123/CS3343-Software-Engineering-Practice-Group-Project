@@ -8,8 +8,19 @@ import cs3343_core.*;
 import cs3343_core.node.Connection;
 import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;
+import junit.framework.TestCase;
 
-public class Testcases {
+public class Testcases extends TestCase{
+	
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
+	}
+
+	@Override
+	protected void tearDown() throws Exception {
+		super.tearDown();
+	}
 
 	@Test
 	public void testcase_1() {
@@ -39,27 +50,15 @@ public class Testcases {
 		ArrayList<Node> list = new ArrayList<>();
 		list.add(Map.addNode("node", 'a'));
 		list.add(Map.addNode("node", 'b'));
-//		list.add(Map.addNode("node", 'c'));
-//		list.add(Map.addNode("station", 's'));
-
 		Connection c1 = new Connection(list.get(0), list.get(1));
 		Connection c2 = Map.getConnectionsByNode(list.get(0), list.get(1));
 
 		boolean isEquals = c1.equals(c2);
 
-		if (isEquals)
-			System.out.println("Connection c1(" + c1 + ") is equals to connection c2(" + c2 + ")");
-		else
-			System.out.println("Connection c1(" + c1 + ") is not equals to connection c2(" + c2 + ")");
-		
-		assertEquals(isEquals, true);
-	}
+		System.out.println(
+				"Connection c1(" + c1 + ") is" + (isEquals ? "" : " not") + " equals to connection c2(" + c2 + ")");
 
-	@Test
-	public void testcase_6() {
-		ResourceManager.start();
-		assertEquals(ResourceManager.start(), false); // since the ResourceManager is already started, it will return
-														// false
+		assertEquals(isEquals, true);
 	}
 
 }
