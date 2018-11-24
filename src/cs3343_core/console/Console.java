@@ -97,8 +97,8 @@ public class Console {
 			case "choose_apartment":
 				if (params[2].equals("this")) {
 					((Contacts) lastHandle).chooseApartment();
-				} else if (params.length == 3) {
-					Contacts.getContactByName(params[3]).chooseApartment();
+				} else if (params.length == 2) {
+					Contacts.getContactByName(params[2]).chooseApartment();
 				} else {
 					System.out.println(
 							"Contact add operation expecting exactly 1 parameter! Usage: contact choose_apartment <name|this>.");
