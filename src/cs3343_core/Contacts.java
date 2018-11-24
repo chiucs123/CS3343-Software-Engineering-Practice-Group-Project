@@ -45,10 +45,10 @@ public class Contacts {
 	}
 
 	public static boolean remove(Contacts c) {
-		if (c == null) {
-			return false;
-		} else {
+		try {
 			return contacts.remove(c);
+		} catch (Exception e) {
+			return false;
 		}
 	}
 

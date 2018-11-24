@@ -1,20 +1,11 @@
 package cs3343_testcase;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 import cs3343_core.Map;
-import cs3343_core.console.Command;
-import cs3343_core.console.Console;
-import cs3343_core.node.Connection;
 import cs3343_core.node.Estate;
 import cs3343_core.node.Node;
 import cs3343_core.node.Station;
-import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
 public class TestAddNode extends TestCase {
@@ -33,7 +24,7 @@ public class TestAddNode extends TestCase {
 	public void testAddEstate() {
 		Map.addNode("estate", 'e');
 		assertEquals(Estate.getNodeByCode('e').getType(), "estate");
-		
+
 		Map.removeNode(Node.getNodeByCode('e'));
 	}
 
@@ -41,7 +32,7 @@ public class TestAddNode extends TestCase {
 	public void testAddStation() {
 		Map.addNode("station", 's');
 		assertEquals(Station.getNodeByCode('s').getType(), "station");
-		
+
 		Map.removeNode(Node.getNodeByCode('s'));
 	}
 
@@ -49,50 +40,86 @@ public class TestAddNode extends TestCase {
 	public void testAddNode() {
 		Map.addNode("node", 'n');
 		assertEquals(Node.getNodeByCode('n').getType(), "node");
-		
+
 		Map.removeNode(Node.getNodeByCode('n'));
 
 	}
 
 	@Test
-	public void testAddEstateWithCoordinates() {
+	public void testAddEstateWithCoordinatesAndTestXCoordinate() {
 		double positionX = 1, positionY = 0;
-		char index = 'f';
+		char index = 'e';
 
 		Map.addNode("estate", index, positionX, positionY);
 		Node n = Estate.getNodeByCode(index);
-		boolean sameCoordinate = n.getPositionX() == positionX && n.getPositionY() == positionY;
 
-		assertEquals(sameCoordinate, true);
-		
+		assertEquals(n.getPositionX(), positionX);
+
 		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
-	public void testAddStationWithCoordinates() {
-		double positionX = 2, positionY = 0;
-		char index = 't';
+	public void testAddEstateWithCoordinatesAndTestYCoordinate() {
+		double positionX = 1, positionY = 0;
+		char index = 'e';
+
+		Map.addNode("estate", index, positionX, positionY);
+		Node n = Estate.getNodeByCode(index);
+
+		assertEquals(n.getPositionY(), positionY);
+
+		Map.removeNode(Node.getNodeByCode(index));
+	}
+
+	@Test
+	public void testAddStationWithCoordinatesAndTestXCoordinate() {
+		double positionX = 1, positionY = 0;
+		char index = 's';
 
 		Map.addNode("station", index, positionX, positionY);
 		Node n = Station.getNodeByCode(index);
-		boolean sameCoordinate = n.getPositionX() == positionX && n.getPositionY() == positionY;
 
-		assertEquals(sameCoordinate, true);
-		
+		assertEquals(n.getPositionX(), positionX);
+
 		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
-	public void testAddNodeWithCoordinates() {
-		double positionX = 3, positionY = 0;
-		char index = 'p';
+	public void testAddStationWithCoordinatesAndTestYCoordinate() {
+		double positionX = 1, positionY = 0;
+		char index = 's';
+
+		Map.addNode("station", index, positionX, positionY);
+		Node n = Station.getNodeByCode(index);
+
+		assertEquals(n.getPositionY(), positionY);
+
+		Map.removeNode(Node.getNodeByCode(index));
+	}
+
+	@Test
+	public void testAddNodeWithCoordinatesAndTestXCoordinate() {
+		double positionX = 1, positionY = 0;
+		char index = 'n';
 
 		Map.addNode("node", index, positionX, positionY);
 		Node n = Node.getNodeByCode(index);
-		boolean sameCoordinate = n.getPositionX() == positionX && n.getPositionY() == positionY;
 
-		assertEquals(sameCoordinate, true);
-		
+		assertEquals(n.getPositionX(), positionX);
+
+		Map.removeNode(Node.getNodeByCode(index));
+	}
+
+	@Test
+	public void testAddNodeWithCoordinatesAndTestYCoordinate() {
+		double positionX = 1, positionY = 0;
+		char index = 'n';
+
+		Map.addNode("node", index, positionX, positionY);
+		Node n = Node.getNodeByCode(index);
+
+		assertEquals(n.getPositionY(), positionY);
+
 		Map.removeNode(Node.getNodeByCode(index));
 	}
 
