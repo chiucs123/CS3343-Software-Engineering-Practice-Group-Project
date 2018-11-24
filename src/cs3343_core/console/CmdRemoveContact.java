@@ -7,26 +7,29 @@ public class CmdRemoveContact extends Command {
 	private Contacts c = null;
 
 	public CmdRemoveContact(String name) {
-		for (Contacts ct : Contacts.contacts) {
-			if (ct.getName().equals(name)) {
-				c = ct;
-				Contacts.contacts.remove(c);
-				break;
+		c = Contacts.getContactByName(name);
+		if (c != null) {
+			if(Contacts.remove(name)) {
+				System.out.println("Contact " + c + " removed.");
+			}else {
+				System.out.println("Contact " + c + " cannot be removed.");
 			}
+		} else {
+			System.out.println("Contact " + c + " does not exist.");
 		}
 	}
 
 	@Override
 	public void undo() {
 		if (c != null) {
-			Contacts.contacts.add(c);
+			Contacts.add(c.getName(), c.getAge());
 		}
 	}
 
 	@Override
 	public void redo() {
 		if (c != null) {
-			Contacts.contacts.remove(c);
+			Contacts.remove(c.getName());
 		}
 
 	}

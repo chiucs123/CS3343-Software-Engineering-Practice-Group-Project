@@ -28,11 +28,16 @@ public class Contacts {
 		}
 		return null;
 	}
-	
+
 	public static Contacts add(String name, int age) {
 		Contacts c = new Contacts(name, age);
 		contacts.add(c);
 		return c;
+	}
+	
+	public static boolean remove(String name) {
+		Contacts c = getContactByName(name);
+		return contacts.remove(c);
 	}
 
 	public String getName() {
