@@ -11,7 +11,7 @@ public class Map {
 	private static boolean initialised = false;
 
 	public static Node addNode(String type, char index) {
-		switch (type) {
+		switch (type.trim().toLowerCase()) {
 		case "estate":
 		case "estates":
 			Estate e = new Estate(index);
@@ -27,7 +27,7 @@ public class Map {
 	}
 
 	public static Node addNode(String type, char index, double x, double y) {
-		switch (type) {
+		switch (type.trim().toLowerCase()) {
 		case "estate":
 		case "estates":
 			Estate e = new Estate(index, x, y);
