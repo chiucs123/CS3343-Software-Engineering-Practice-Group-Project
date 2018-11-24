@@ -45,11 +45,7 @@ public class Contacts {
 	}
 
 	public static boolean remove(Contacts c) {
-		try {
-			return contacts.remove(c);
-		} catch (Exception e) {
-			return false;
-		}
+		return contacts.remove(c);
 	}
 
 	public String getName() {

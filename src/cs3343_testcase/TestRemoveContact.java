@@ -34,11 +34,8 @@ public class TestRemoveContact extends TestCase {
 	@Test
 	public void testRemoveContactsFail() {
 		String name = "apple";
-		int age = 18;
 
-		Contacts contacts = new Contacts(name, age);
-
-		boolean removeSuccess = Contacts.remove(contacts);
+		boolean removeSuccess = Contacts.remove(Contacts.getContactByName(name));
 
 		assertEquals(removeSuccess, false);
 	}
