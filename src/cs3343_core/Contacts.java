@@ -10,7 +10,7 @@ public class Contacts {
 	private String name = "";
 	private int age = 0;
 	private ArrayList<Apartments> apartments = new ArrayList<>();
-	public static ArrayList<Contacts> contacts = new ArrayList<>();
+	private static ArrayList<Contacts> contacts = new ArrayList<>();
 	private int id = 0;
 
 	public Contacts(String name, int age) {
@@ -27,6 +27,12 @@ public class Contacts {
 			}
 		}
 		return null;
+	}
+	
+	public static Contacts add(String name, int age) {
+		Contacts c = new Contacts(name, age);
+		contacts.add(c);
+		return c;
 	}
 
 	public String getName() {
