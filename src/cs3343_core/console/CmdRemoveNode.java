@@ -10,7 +10,11 @@ public class CmdRemoveNode extends Command {
 	public CmdRemoveNode(char code) {
 		n = Node.getNodeByCode(code);
 		if (n != null) {
-			Map.removeNode(n);
+			if(Map.removeNode(n)) {
+				System.out.println("Node " + code + " removed.");
+			}else {
+				System.out.println("Node " + code + " cannot be removed.");
+			}
 		} else {
 			System.out.println("Node " + code + " does not exist.");
 		}
