@@ -31,20 +31,69 @@ public class TestAddNode extends TestCase {
 
 	@Test
 	public void testAddEstate() {
-		Map.addNode("estate", 'e', 0, 0);
-		assertEquals(Estate.getNodeByCode('e').getIndex(), 'e');
+		Map.addNode("estate", 'e');
+		assertEquals(Estate.getNodeByCode('e').getType(), "estate");
+		
+		Map.removeNode(Node.getNodeByCode('e'));
 	}
 
 	@Test
 	public void testAddStation() {
-		Map.addNode("station", 's', 1, 0);
-		assertEquals(Station.getNodeByCode('s').getIndex(), 's');
+		Map.addNode("station", 's');
+		assertEquals(Station.getNodeByCode('s').getType(), "station");
+		
+		Map.removeNode(Node.getNodeByCode('s'));
 	}
 
 	@Test
 	public void testAddNode() {
-		Map.addNode("node", 'n', 2, 0);
-		assertEquals(Node.getNodeByCode('n').getIndex(), 'n');
+		Map.addNode("node", 'n');
+		assertEquals(Node.getNodeByCode('n').getType(), "node");
+		
+		Map.removeNode(Node.getNodeByCode('n'));
+
+	}
+
+	@Test
+	public void testAddEstateWithCoordinates() {
+		double positionX = 1, positionY = 0;
+		char index = 'f';
+
+		Map.addNode("estate", index, positionX, positionY);
+		Node n = Estate.getNodeByCode(index);
+		boolean sameCoordinate = n.getPositionX() == positionX && n.getPositionY() == positionY;
+
+		assertEquals(sameCoordinate, true);
+		
+		Map.removeNode(Node.getNodeByCode(index));
+	}
+
+	@Test
+	public void testAddStationWithCoordinates() {
+		double positionX = 2, positionY = 0;
+		char index = 't';
+
+		Map.addNode("station", index, positionX, positionY);
+		Node n = Station.getNodeByCode(index);
+		boolean sameCoordinate = n.getPositionX() == positionX && n.getPositionY() == positionY;
+
+		assertEquals(sameCoordinate, true);
+		
+		Map.removeNode(Node.getNodeByCode(index));
+	}
+
+	@Test
+	public void testAddNodeWithCoordinates() {
+		double positionX = 3, positionY = 0;
+		char index = 'p';
+
+		Map.addNode("node", index, positionX, positionY);
+		Node n = Node.getNodeByCode(index);
+		boolean sameCoordinate = n.getPositionX() == positionX && n.getPositionY() == positionY;
+
+		assertEquals(sameCoordinate, true);
+		
+		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 }
