@@ -24,7 +24,7 @@ public class Console {
 		lastHandle = o;
 	}
 
-	private static Object getHandle() {
+	public static Object getHandle() {
 		return lastHandle;
 	}
 
