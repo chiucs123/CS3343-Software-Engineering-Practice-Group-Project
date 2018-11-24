@@ -25,6 +25,6 @@ public class TestReport extends TestCase {
 		Map.addNode("estate", 'e');
 		Contacts c = Contacts.add("apple", 18);
 		Apartments a = c.chooseApartment();
-		thi
+		
 	}
 }

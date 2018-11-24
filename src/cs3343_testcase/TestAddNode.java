@@ -2,10 +2,12 @@ package cs3343_testcase;
 
 import org.junit.Test;
 
+import cs3343_core.Contacts;
 import cs3343_core.Map;
 import cs3343_core.node.Estate;
 import cs3343_core.node.Node;
 import cs3343_core.node.Station;
+import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
 public class TestAddNode extends TestCase {
@@ -13,36 +15,33 @@ public class TestAddNode extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		ResourceManager.start();
 	}
 
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
+		for(Node n : Node.instances)
+			Map.removeNode(n);
+		Contacts.reset();
 	}
 
 	@Test
 	public void testAddEstate() {
 		Map.addNode("estate", 'e');
 		assertEquals(Estate.getNodeByCode('e').getType(), "estate");
-
-		Map.removeNode(Node.getNodeByCode('e'));
 	}
 
 	@Test
 	public void testAddStation() {
 		Map.addNode("station", 's');
 		assertEquals(Station.getNodeByCode('s').getType(), "station");
-
-		Map.removeNode(Node.getNodeByCode('s'));
 	}
 
 	@Test
 	public void testAddNode() {
 		Map.addNode("node", 'n');
 		assertEquals(Node.getNodeByCode('n').getType(), "node");
-
-		Map.removeNode(Node.getNodeByCode('n'));
-
 	}
 
 	@Test
@@ -54,8 +53,6 @@ public class TestAddNode extends TestCase {
 		Node n = Estate.getNodeByCode(index);
 
 		assertEquals(n.getPositionX(), positionX);
-
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
@@ -67,8 +64,6 @@ public class TestAddNode extends TestCase {
 		Node n = Estate.getNodeByCode(index);
 
 		assertEquals(n.getPositionY(), positionY);
-
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
@@ -80,8 +75,6 @@ public class TestAddNode extends TestCase {
 		Node n = Station.getNodeByCode(index);
 
 		assertEquals(n.getPositionX(), positionX);
-
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
@@ -93,8 +86,6 @@ public class TestAddNode extends TestCase {
 		Node n = Station.getNodeByCode(index);
 
 		assertEquals(n.getPositionY(), positionY);
-
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
@@ -106,8 +97,6 @@ public class TestAddNode extends TestCase {
 		Node n = Node.getNodeByCode(index);
 
 		assertEquals(n.getPositionX(), positionX);
-
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
@@ -119,8 +108,6 @@ public class TestAddNode extends TestCase {
 		Node n = Node.getNodeByCode(index);
 
 		assertEquals(n.getPositionY(), positionY);
-
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 }

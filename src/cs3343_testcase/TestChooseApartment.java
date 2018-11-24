@@ -8,6 +8,7 @@ import cs3343_core.console.Console;
 import cs3343_core.node.Apartments;
 import cs3343_core.node.Estate;
 import cs3343_core.node.Node;
+import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
 public class TestChooseApartment extends TestCase {
@@ -15,11 +16,15 @@ public class TestChooseApartment extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
+		ResourceManager.start();
 	}
 
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
+		for(Node n : Node.instances)
+			Map.removeNode(n);
+		Contacts.reset();
 	}
 
 	@Test
@@ -38,9 +43,6 @@ public class TestChooseApartment extends TestCase {
 		Apartments a = ((Contacts) Console.getHandle()).chooseApartment();
 
 		assertEquals(a.getEstate().getName(), e.getName());
-
-		Contacts.remove(Contacts.getContactByName(name));
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 
 	@Test
@@ -59,8 +61,5 @@ public class TestChooseApartment extends TestCase {
 		Apartments a = c.chooseApartment();
 
 		assertEquals(a.getEstate().getName(), e.getName());
-
-		Contacts.remove(c);
-		Map.removeNode(Node.getNodeByCode(index));
 	}
 }
