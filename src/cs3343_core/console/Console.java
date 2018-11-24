@@ -97,7 +97,7 @@ public class Console {
 			case "choose_apartment":
 				if (params[2].equals("this")) {
 					((Contacts) lastHandle).chooseApartment();
-				} else if (params.length == 2) {
+				} else if (params.length == 3) {
 					Contacts.getContactByName(params[2]).chooseApartment();
 				} else {
 					System.out.println(
