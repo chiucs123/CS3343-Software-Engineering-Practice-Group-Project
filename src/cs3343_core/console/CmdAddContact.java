@@ -8,19 +8,19 @@ public class CmdAddContact extends Command {
 
 	public CmdAddContact(String name, int age) {
 		c = new Contacts(name, age);
-		Contacts.contacts.add(c);
+		Contacts.add(c);
 	}
 
 	@Override
 	public void undo() {
 		if (c != null) {
-			Contacts.contacts.remove(c);
+			Contacts.remove(c);
 		}
 	}
 
 	@Override
 	public void redo() {
-		Contacts.contacts.add(c);
+		Contacts.add(c);
 	}
 
 	public Contacts getHandlingContact() {
