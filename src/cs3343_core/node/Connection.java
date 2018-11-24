@@ -44,8 +44,8 @@ public class Connection {
 				+ (enabled ? "" : " (disabled)");
 	}
 	
-//	public boolean equals(Connection c) {
-//		return (this.a.equals(c.a) && this.b.equals(c.b)) || (this.a.equals(c.b) && this.b.equals(c.a));
-//	}
+	public boolean equals(Connection c) {
+		return (this.a.equals(c.a) && this.b.equals(c.b)) || (this.a.equals(c.b) && this.b.equals(c.a));
+	}
 	
 }
