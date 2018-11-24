@@ -346,8 +346,11 @@ public class Map {
 	}
 
 	public static boolean removeNode(Node n) {
-		boolean result = n.remove();
-		return result;
+		if (n == null) {
+			return false;
+		} else {
+			return n.remove();
+		}
 	}
 
 	private Map() {
