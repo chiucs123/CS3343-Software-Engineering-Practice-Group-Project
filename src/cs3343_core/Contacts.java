@@ -21,8 +21,8 @@ public class Contacts {
 	}
 
 	public static Contacts getContactByName(String name) {
-		for(Contacts c : contacts) {
-			if(c.getName().equals(name)) {
+		for (Contacts c : contacts) {
+			if (c.getName().equals(name)) {
 				return c;
 			}
 		}
@@ -33,19 +33,23 @@ public class Contacts {
 		Contacts c = new Contacts(name, age);
 		return add(c);
 	}
-	
+
 	public static Contacts add(Contacts c) {
 		contacts.add(c);
 		return c;
 	}
-	
+
 	public static boolean remove(String name) {
 		Contacts c = getContactByName(name);
 		return remove(c);
 	}
-	
+
 	public static boolean remove(Contacts c) {
-		return contacts.remove(c);
+		if (c == null) {
+			return false;
+		} else {
+			return contacts.remove(c);
+		}
 	}
 
 	public String getName() {
