@@ -122,6 +122,11 @@ public class Console {
 					if (params.length > 3 && params[3].equals("this")) {
 						c = new CmdReportPrintContacts((Contacts) lastHandle);
 						break;
+					}else if (params.length > 3) {
+						c = new CmdReportPrintContacts(Contacts.getContactByName(params[3]));
+						break;
+					}else {
+						System.out.println("Unknown contact: " + params[3] + "in report print.");
 					}
 				default:
 					System.out.println("Unknown print type: " + params[2] + "in report print.");
