@@ -17,10 +17,12 @@ public class Main {
 				System.out.println("Bye!");
 				in.close();
 				return;
+			} else if (s.trim() == "") {
+				continue;
 			} else {
 				Console.exec(s.trim());
 			}
 		}
-		
+
 	}
 }
