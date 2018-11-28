@@ -7,6 +7,7 @@ public class CmdReportPrintContacts extends Command {
 
 	public CmdReportPrintContacts(Contacts c) {
 		System.out.println(Report.getSectionContact(c));
+		System.out.println(Report.getSectionUsage(c));
 	}
 
 	@Override
@@ -16,6 +17,5 @@ public class CmdReportPrintContacts extends Command {
 	@Override
 	public void redo() {
 	}
-
 
 }

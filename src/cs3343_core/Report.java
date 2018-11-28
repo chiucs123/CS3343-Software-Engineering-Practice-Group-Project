@@ -54,10 +54,10 @@ public class Report {
 		String result = "";
 
 		lines.add("Usage Charges:");
-		lines.add(String.format("%10s : %8.4f %2s", Water.type, Resource.getUsage()));
-		lines.add(String.format("%10s : %8.4f %2s", Network.type, Resource.getUsage()));
-		lines.add(String.format("%10s : %8.4f %2s", Gas.type, Resource.getUsage()));
-		lines.add(String.format("%10s : %8.4f %2s", Electricity.type, Resource.getUsage()));
+		lines.add(String.format("%10s : %8.4f %2s", Water.type, Resource.getUsage(), "L"));
+		lines.add(String.format("%10s : %8.4f %2s", Network.type, Resource.getUsage(), "MB"));
+		lines.add(String.format("%10s : %8.4f %2s", Gas.type, Resource.getUsage(), "m3"));
+		lines.add(String.format("%10s : %8.4f %2s", Electricity.type, Resource.getUsage(),"kW"));
 
 		lines.add("");
 		lines.add("Path Charges:");
@@ -72,7 +72,7 @@ public class Report {
 			Node sto = route.get(i + 1);
 			double sectionCharge = Map.getRouteNodesCost(sfrom, sto);
 			total += sectionCharge;
-			lines.add(String.format("%c -> %c : %8.4f", sfrom, sto, sectionCharge));
+			lines.add(String.format("%c -> %c : %8.4f", sfrom.getIndex(), sto.getIndex(), sectionCharge));
 		}
 		lines.add("--------------------------");
 		lines.add(String.format("       : %8.4f", total));
