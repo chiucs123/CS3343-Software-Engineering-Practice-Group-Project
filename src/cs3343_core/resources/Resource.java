@@ -7,4 +7,8 @@ public abstract interface Resource {
 	public static Resource gas = (Resource) new Gas();
 
 	public String getType();
+
+	public static double getUsage() {
+		return Math.random() * 10000 % 10000;
+	}
 }

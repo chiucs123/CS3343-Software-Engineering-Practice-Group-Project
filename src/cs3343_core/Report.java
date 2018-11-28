@@ -2,9 +2,8 @@ package cs3343_core;
 
 import java.util.*;
 
-import cs3343_core.node.Apartments;
-import cs3343_core.node.Node;
-import cs3343_core.node.Station;
+import cs3343_core.node.*;
+import cs3343_core.resources.*;
 
 public class Report {
 	private static final int print_width = 120;
@@ -45,6 +44,42 @@ public class Report {
 						String.format("%" + (print_width - 14) + "s Page %2d of %2d", "", ++currentPage, pages));
 			}
 		}
+		result = String.join("\n", lines);
+		System.out.println(result);
+		return result;
+	}
+
+	public static String getSectionUsage(Contacts c) {
+		ArrayList<String> lines = new ArrayList<>();
+		String result = "";
+
+		lines.add("Usage Charges:");
+		lines.add(String.format("%10s : %8.4f %2s", Water.type, Resource.getUsage()));
+		lines.add(String.format("%10s : %8.4f %2s", Network.type, Resource.getUsage()));
+		lines.add(String.format("%10s : %8.4f %2s", Gas.type, Resource.getUsage()));
+		lines.add(String.format("%10s : %8.4f %2s", Electricity.type, Resource.getUsage()));
+
+		lines.add("");
+		lines.add("Path Charges:");
+		Station nearestStation = c.checkNearestStation();
+		Apartments a = c.getApartment();
+		Node from = nearestStation;
+		Node to = a.getEstate();
+		ArrayList<Node> route = Map.getRouteNodes(from, to);
+		double total = 0.0;
+		for (int i = 0; i < route.size() - 2; i++) {
+			Node sfrom = route.get(i);
+			Node sto = route.get(i + 1);
+			double sectionCharge = Map.getRouteNodesCost(sfrom, sto);
+			total += sectionCharge;
+			lines.add(String.format("%c -> %c : %8.4f", sfrom, sto, sectionCharge));
+		}
+		lines.add("--------------------------");
+		lines.add(String.format("       : %8.4f", total));
+
+		lines.add("");
+		lines.add(getDivisionLine());
+
 		result = String.join("\n", lines);
 		System.out.println(result);
 		return result;

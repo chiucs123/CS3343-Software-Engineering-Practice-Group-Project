@@ -4,6 +4,7 @@ import java.util.*;
 
 import cs3343_core.Contacts;
 import cs3343_core.Report;
+import cs3343_core.node.Apartments;
 
 public class Console {
 	private static final Console instance = new Console();
@@ -98,7 +99,9 @@ public class Console {
 				if (params[2].equals("this")) {
 					((Contacts) lastHandle).chooseApartment();
 				} else if (params.length == 3) {
-					Contacts.getContactByName(params[2]).chooseApartment();
+					Contacts contact = Contacts.getContactByName(params[2]);
+					Apartments a = contact.chooseApartment();
+					System.out.println("Contact " + contact.getName() + " chose apartment " + a.getAddress());
 				} else {
 					System.out.println(
 							"Contact add operation expecting exactly 1 parameter! Usage: contact choose_apartment <name|this>.");
@@ -122,10 +125,15 @@ public class Console {
 					if (params.length > 3 && params[3].equals("this")) {
 						c = new CmdReportPrintContacts((Contacts) lastHandle);
 						break;
-					}else if (params.length > 3) {
-						c = new CmdReportPrintContacts(Contacts.getContactByName(params[3]));
+					} else if (params.length > 3) {
+						Contacts contact = Contacts.getContactByName(params[3]);
+						if (contact == null) {
+							System.out.println("The contact " + params[3] + " is not fonud.");
+						} else {
+							c = new CmdReportPrintContacts(contact);
+						}
 						break;
-					}else {
+					} else {
 						System.out.println("Unknown contact: " + params[3] + "in report print.");
 					}
 				default:
