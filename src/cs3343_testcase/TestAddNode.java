@@ -21,8 +21,7 @@ public class TestAddNode extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		for(Node n : Node.instances)
-			Map.removeNode(n);
+		Node.instances.clear();
 		Contacts.reset();
 	}
 

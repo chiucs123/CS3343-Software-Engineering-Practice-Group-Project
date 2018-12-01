@@ -143,12 +143,6 @@ public class Contacts {
 	}
 
 	public static void reset() {
-//		for(Apartments a: apartments) {
-//			apartments.remove(a);
-//		}
-		for(Contacts c: contacts) {
-			contacts.remove(c);
-		}
+		contacts.clear();
 	}
-
 }

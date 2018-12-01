@@ -336,13 +336,19 @@ public class Map {
 		return result;
 	}
 
-	public static void printMST() {
+	public static String printMST() {
 		ArrayList<Connection> result = getMST();
+
+		String resultStr = "";
+
 		System.out.println("MST: ");
 		for (Connection c : result) {
 			System.out.println(c.toString());
+			resultStr += c.toString() + "\n";
 		}
 		System.out.println();
+
+		return resultStr + "\n";
 	}
 
 	public static boolean removeNode(Node n) {

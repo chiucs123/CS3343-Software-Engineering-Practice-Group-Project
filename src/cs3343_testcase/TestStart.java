@@ -2,6 +2,7 @@ package cs3343_testcase;
 
 import org.junit.Test;
 
+import cs3343_core.Contacts;
 import cs3343_core.Map;
 import cs3343_core.console.Command;
 import cs3343_core.console.Console;
@@ -20,8 +21,8 @@ public class TestStart extends TestCase{
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		for(Node n : Node.instances)
-			Map.removeNode(n);
+		Node.instances.clear();
+		Contacts.reset();
 	}
 
 	@Test

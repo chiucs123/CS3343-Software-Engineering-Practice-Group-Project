@@ -22,8 +22,7 @@ public class TestChooseApartment extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		for(Node n : Node.instances)
-			Map.removeNode(n);
+		Node.instances.clear();
 		Contacts.reset();
 	}
 
@@ -32,8 +31,7 @@ public class TestChooseApartment extends TestCase {
 		double positionX = 1, positionY = 0;
 		char index = 'e';
 
-		Map.addNode("estate", index, positionX, positionY);
-		Estate e = (Estate) Estate.getNodeByCode(index);
+		Estate e = (Estate) Map.addNode("estate", index, positionX, positionY);
 
 		String name = "apple";
 		int age = 18;
@@ -50,8 +48,7 @@ public class TestChooseApartment extends TestCase {
 		double positionX = 1, positionY = 0;
 		char index = 'e';
 
-		Map.addNode("estate", index, positionX, positionY);
-		Estate e = (Estate) Estate.getNodeByCode(index);
+		Estate e = (Estate) Map.addNode("estate", index, positionX, positionY);
 
 		String name = "apple";
 		int age = 18;
