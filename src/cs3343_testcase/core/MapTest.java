@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import cs3343_core.Contacts;
 import cs3343_core.Map;
+import cs3343_core.node.Apartments;
 import cs3343_core.node.Connection;
 import cs3343_core.node.Estate;
 import cs3343_core.node.Node;
@@ -257,6 +258,22 @@ public class MapTest extends TestCase {
 	
 	@Test
 	public void testDetermineNearestStation() {
+		double positionX = 1, positionY = 0;
+		char index = 'e';
+
+		Estate e = (Estate) Map.addNode("estate", index, positionX, positionY);
+		Station s = (Station) Map.addNode("station", 's', 3, 0);
+
+		String name = "apple";
+		int age = 18;
+
+		Contacts c = Contacts.add(name, age);
+
+		Apartments a = c.chooseApartment();
+		System.out.println("apartment: "+ a.toCode());
 		
+		Station st = Map.determineNearestStation(a);
+		
+		System.out.println("station "+ st.getIndex());
 	}
 }
