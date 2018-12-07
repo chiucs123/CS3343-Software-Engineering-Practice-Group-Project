@@ -13,7 +13,7 @@ import cs3343_core.node.Station;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
-public class TestMap extends TestCase {
+public class MapTest extends TestCase {
 
 	@Override
 	protected void setUp() throws Exception {
@@ -253,5 +253,10 @@ public class TestMap extends TestCase {
 		int numOfLines = result.split("\r\n|\r|\n").length;
 		System.out.println("number of lines: " + numOfLines);
 		assertEquals(numOfLines, 2);
+	}
+	
+	@Test
+	public void testDetermineNearestStation() {
+		
 	}
 }
