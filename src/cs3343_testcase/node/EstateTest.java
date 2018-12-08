@@ -10,7 +10,9 @@ import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
 public class EstateTest extends TestCase {
-	
+
+	private int testIndex = 1;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -26,36 +28,50 @@ public class EstateTest extends TestCase {
 
 	@Test
 	public void testGetType() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testGetType()");
 		Estate s = new Estate('s', 1, 0);
 		assertEquals(s.getType(), "estate");
 	}
 
 	@Test
 	public void testEstate() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testEstate()");
 		Estate e = new Estate();
 		assertEquals(Estate.instances.size(), 1);
 	}
 
 	@Test
 	public void testEstateChar() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testEstateChar()");
 		Estate e = new Estate('s');
-		assertEquals(Estate.instances.size(), 1);
+		assertEquals(Estate.instances.get(0).getIndex(), 's');
 	}
 
 	@Test
 	public void testEstateCharDoubleDouble() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testEstateCharDoubleDouble()");
 		Estate e = new Estate('s', 1, 0);
-		assertEquals(Estate.instances.size(), 1);
+		assertEquals(Estate.instances.get(0).getIndex() == 's' && Estate.instances.get(0).getPositionX() == 1
+				&& Estate.instances.get(0).getPositionY() == 0, true);
 	}
 
 	@Test
 	public void testMoveIn() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testMoveIn()");
 		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetApartmentsByFloor() {
-		fail("Not yet implemented");
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testGetApartmentsByFloor()");
+		Estate e = new Estate();
+		assertEquals(e.getFloors() > 0, true);
 	}
 
 }
