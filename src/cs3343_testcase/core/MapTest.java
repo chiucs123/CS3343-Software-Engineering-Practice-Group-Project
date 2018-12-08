@@ -274,6 +274,7 @@ public class MapTest extends TestCase {
 		
 		Station st = Map.determineNearestStation(a);
 		
-		System.out.println("station "+ st.getIndex());
+		System.out.println("nearest station:"+ st.getIndex());
+		assertEquals(st.getIndex(), 's');
 	}
 }
