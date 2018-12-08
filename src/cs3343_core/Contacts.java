@@ -21,6 +21,8 @@ public class Contacts {
 	}
 
 	public static Contacts getContactByName(String name) {
+		System.out.println("Name: "+ name +", Contacts: " + contacts);
+		
 		for (Contacts c : contacts) {
 			if (c.getName().equals(name)) {
 				return c;
@@ -31,7 +33,8 @@ public class Contacts {
 
 	public static Contacts add(String name, int age) {
 		Contacts c = new Contacts(name, age);
-		return add(c);
+//		return add(c);
+		return c;
 	}
 
 	public static Contacts add(Contacts c) {
@@ -143,6 +146,8 @@ public class Contacts {
 	}
 
 	public static void reset() {
+		System.out.println("Contacts size before clearing:"+ contacts.size());
 		contacts.clear();
+		System.out.println("Contacts size after clearing:"+ contacts.size());
 	}
 }
