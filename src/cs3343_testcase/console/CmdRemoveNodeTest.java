@@ -11,6 +11,8 @@ import junit.framework.TestCase;
 
 public class CmdRemoveNodeTest extends TestCase {
 
+	private int testIndex = 1;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -43,6 +45,8 @@ public class CmdRemoveNodeTest extends TestCase {
 
 	@Test
 	public void testCmdRemoveNode() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testCmdRemoveNode()");
 		Map.addNode("node", 'n');
 		CmdRemoveNode cmd = new CmdRemoveNode('n');
 		assertEquals(Node.getNodeByCode('n'), null);
