@@ -9,6 +9,8 @@ import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
 public class CmdRemoveContactTest extends TestCase {
+
+	private int testIndex = 1;
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -24,6 +26,8 @@ public class CmdRemoveContactTest extends TestCase {
 
 	@Test
 	public void testUndo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testUndo()");
 		Contacts c = Contacts.add("banana", 19);
 		CmdRemoveContact cmd = new CmdRemoveContact("banana");
 		cmd.undo();
@@ -32,6 +36,8 @@ public class CmdRemoveContactTest extends TestCase {
 
 	@Test
 	public void testRedo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testRedo()");
 		Contacts c = Contacts.add("banana", 19);
 		CmdRemoveContact cmd = new CmdRemoveContact("banana");
 		cmd.undo();
@@ -41,6 +47,8 @@ public class CmdRemoveContactTest extends TestCase {
 
 	@Test
 	public void testCmdRemoveContact() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testCmdRemoveContact()");
 		Contacts c = Contacts.add("banana", 19);
 		CmdRemoveContact cmd = new CmdRemoveContact("banana");
 		assertEquals(Contacts.getContactByName("banana"), null);
