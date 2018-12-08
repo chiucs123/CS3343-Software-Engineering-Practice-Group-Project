@@ -1,19 +1,15 @@
 package cs3343_testcase.node;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
 
 import cs3343_core.Contacts;
-import cs3343_core.Map;
-import cs3343_core.node.Connection;
 import cs3343_core.node.Estate;
 import cs3343_core.node.Node;
 import cs3343_core.node.Station;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
-public class TestNode extends TestCase {
+public class StationTest extends TestCase {
 
 	@Override
 	protected void setUp() throws Exception {
@@ -24,13 +20,26 @@ public class TestNode extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		Node.instances.clear();
+		Node.reset();
 		Contacts.reset();
 	}
 
 	@Test
-	public void testMapAddEstate() {
-//		Map.addNode("estate", 'e');
-//		assertEquals(Estate.getNodeByCode('e').getType(), "estate");
+	public void testGetType() {
+		Station s = new Station('s', 1, 0);
+		assertEquals(s.getType(), "station");
 	}
+
+	@Test
+	public void testStationChar() {
+		Station s = new Station('s');
+		assertEquals(Station.instances.size(), 1);
+	}
+
+	@Test
+	public void testStationCharDoubleDouble() {
+		Station s = new Station('s', 1, 0);
+		assertEquals(Station.instances.size(), 1);
+	}
+
 }

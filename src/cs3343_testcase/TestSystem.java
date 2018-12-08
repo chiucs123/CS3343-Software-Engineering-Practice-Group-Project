@@ -23,7 +23,7 @@ public class TestSystem extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		Node.instances.clear();
+		Node.reset();
 		Contacts.reset();
 	}
 

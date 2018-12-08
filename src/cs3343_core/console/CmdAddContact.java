@@ -8,7 +8,6 @@ public class CmdAddContact extends Command {
 
 	public CmdAddContact(String name, int age) {
 		c = new Contacts(name, age);
-		Contacts.add(c);
 	}
 
 	@Override
