@@ -1,16 +1,14 @@
-package cs3343_testcase;
+package cs3343_testcase.console;
 
 import org.junit.Test;
 
 import cs3343_core.Contacts;
-import cs3343_core.Map;
-import cs3343_core.node.Apartments;
+import cs3343_core.console.CmdStart;
 import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
-public class TestReport extends TestCase {
-	
+public class CmdStartTest extends TestCase {
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -25,11 +23,9 @@ public class TestReport extends TestCase {
 	}
 
 	@Test
-	public void testReport_1() {
-		Map.addNode("station", 's');
-		Map.addNode("estate", 'e');
-		Contacts c = Contacts.add("apple", 18);
-		Apartments a = c.chooseApartment();
-		
+	public void testCmdStart() {
+		CmdStart cmd = new CmdStart();
+		assertEquals(ResourceManager.isStarted(), true); // ResourceManager is already started
 	}
+
 }

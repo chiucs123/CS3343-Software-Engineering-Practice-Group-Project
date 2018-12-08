@@ -30,6 +30,10 @@ public class ResourceManager {
 		}
 		return started;
 	}
+	
+	public static boolean isStarted() {
+		return started;
+	}
 
 	public static void getRoute(char from, char to) {
 		System.out.println(Map.getRouteString(from, to));
