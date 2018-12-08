@@ -44,7 +44,7 @@ public class CmdRemoveNodeTest extends TestCase {
 		CmdRemoveNode cmd = new CmdRemoveNode('n');
 		cmd.undo();
 		cmd.redo();
-		assertEquals(Node.getNodeByCode('n'), null);
+		assertEquals(Node.getNodeByCode('n').getIndex(), 'n');
 	}
 
 	@Test
