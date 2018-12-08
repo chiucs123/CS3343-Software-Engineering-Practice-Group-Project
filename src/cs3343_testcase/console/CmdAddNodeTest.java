@@ -12,6 +12,8 @@ import junit.framework.TestCase;
 
 public class CmdAddNodeTest extends TestCase {
 
+	private int testIndex = 1;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -27,6 +29,8 @@ public class CmdAddNodeTest extends TestCase {
 
 	@Test
 	public void testUndo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testUndo()");
 		CmdAddNode cmd = new CmdAddNode("node", 'e', 1, 0);
 		cmd.undo();
 		assertEquals(Node.instances.size(), 0);
@@ -34,6 +38,8 @@ public class CmdAddNodeTest extends TestCase {
 
 	@Test
 	public void testRedo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testRedo()");
 		CmdAddNode cmd = new CmdAddNode("node", 'e', 1, 0);
 		cmd.undo();
 		cmd.redo();
@@ -42,18 +48,25 @@ public class CmdAddNodeTest extends TestCase {
 
 	@Test
 	public void testCmdAddNodeStringChar() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testCmdAddNodeStringChar()");
 		CmdAddNode cmd = new CmdAddNode("node", 'e');
-		assertEquals(Node.instances.size(), 1);
+		assertEquals(Node.instances.get(0).getIndex(), 'e');
 	}
 
 	@Test
 	public void testCmdAddNodeStringCharDoubleDouble() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testCmdAddNodeStringCharDoubleDouble()");
 		CmdAddNode cmd = new CmdAddNode("node", 'e', 1, 0);
-		assertEquals(Node.instances.size(), 1);
+		assertEquals(Node.instances.get(0).getIndex() == 'e' && Node.instances.get(0).getPositionX() == 1
+				&& Node.instances.get(0).getPositionY() == 0, true);
 	}
 
 	@Test
 	public void testGetHandlingNode() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testGetHandlingNode()");
 		CmdAddNode cmd = new CmdAddNode("node", 'e');
 		Node n = cmd.getHandlingNode();
 		assertEquals(n.getIndex(), 'e');

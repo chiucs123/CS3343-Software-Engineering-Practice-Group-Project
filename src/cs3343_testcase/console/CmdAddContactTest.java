@@ -10,6 +10,8 @@ import junit.framework.TestCase;
 
 public class CmdAddContactTest extends TestCase {
 	
+	private int testIndex = 1;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -25,6 +27,8 @@ public class CmdAddContactTest extends TestCase {
 
 	@Test
 	public void testUndo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase "+(testIndex++)+" : testUndo()");
 		String name = "apple";
 		int age = 18;
 
@@ -37,6 +41,8 @@ public class CmdAddContactTest extends TestCase {
 
 	@Test
 	public void testRedo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase "+(testIndex++)+" : testRedo()");
 		String name = "apple";
 		int age = 18;
 
@@ -50,6 +56,8 @@ public class CmdAddContactTest extends TestCase {
 
 	@Test
 	public void testCmdAddContact() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase "+(testIndex++)+" : testCmdAddContact()");
 		String name = "apple";
 		int age = 18;
 
@@ -62,6 +70,8 @@ public class CmdAddContactTest extends TestCase {
 
 	@Test
 	public void testGetHandlingContact() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase "+(testIndex++)+" : testGetHandlingContact()");
 		String name = "apple";
 		int age = 18;
 
