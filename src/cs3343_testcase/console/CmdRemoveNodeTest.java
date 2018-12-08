@@ -28,6 +28,8 @@ public class CmdRemoveNodeTest extends TestCase {
 
 	@Test
 	public void testUndo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testUndo()");
 		Map.addNode("node", 'n');
 		CmdRemoveNode cmd = new CmdRemoveNode('n');
 		cmd.undo();
@@ -36,6 +38,8 @@ public class CmdRemoveNodeTest extends TestCase {
 
 	@Test
 	public void testRedo() {
+		System.out.println("\n-----------------------------------------------------------");
+		System.out.println("Testcase " + (testIndex++) + " : testRedo()");
 		Map.addNode("node", 'n');
 		CmdRemoveNode cmd = new CmdRemoveNode('n');
 		cmd.undo();
