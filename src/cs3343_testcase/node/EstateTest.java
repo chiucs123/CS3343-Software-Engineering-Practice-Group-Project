@@ -63,7 +63,10 @@ public class EstateTest extends TestCase {
 	public void testMoveIn() {
 		System.out.println("\n-----------------------------------------------------------");
 		System.out.println("Testcase " + (testIndex++) + " : testMoveIn()");
-		fail("Not yet implemented");
+		Estate e = new Estate('s', 1, 0);
+		Contacts c = new Contacts("banana", 19);
+
+		assertEquals(e.moveIn(c), true); // Estate has apartment available for banana to move in.
 	}
 
 	@Test

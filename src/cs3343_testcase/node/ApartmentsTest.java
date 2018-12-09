@@ -85,7 +85,11 @@ public class ApartmentsTest extends TestCase {
 
 	@Test
 	public void testInhabit() {
-		fail("Not yet implemented");
+		Estate s = new Estate('s', 1, 0);
+		Contacts c = new Contacts("banana", 19);
+		Apartments a = new Apartments(s, 1, 'A');
+
+		assertEquals(a.inhabit(c), true); // Estate has apartment available for banana to move in.
 	}
 
 }
