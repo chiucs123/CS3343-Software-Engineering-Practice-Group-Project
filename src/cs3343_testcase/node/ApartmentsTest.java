@@ -9,6 +9,7 @@ import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
+@SuppressWarnings("unused")
 public class ApartmentsTest extends TestCase {
 
 	@Override

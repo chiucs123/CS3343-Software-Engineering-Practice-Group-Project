@@ -8,6 +8,7 @@ import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
+@SuppressWarnings("unused")
 public class CmdStartTest extends TestCase {
 	@Override
 	protected void setUp() throws Exception {

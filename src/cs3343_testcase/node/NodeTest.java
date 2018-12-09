@@ -1,15 +1,13 @@
 package cs3343_testcase.node;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import cs3343_core.Contacts;
-import cs3343_core.Map;
 import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
+@SuppressWarnings("unused")
 public class NodeTest extends TestCase {
 
 	private int testIndex = 1;

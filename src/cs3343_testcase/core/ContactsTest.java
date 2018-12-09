@@ -1,7 +1,5 @@
 package cs3343_testcase.core;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import cs3343_core.Contacts;
@@ -13,6 +11,7 @@ import cs3343_core.node.Station;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
+@SuppressWarnings("unused")
 public class ContactsTest extends TestCase {
 
 	private int testIndex = 1;

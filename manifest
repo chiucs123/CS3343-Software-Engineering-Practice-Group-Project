@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Sealed: true
+
+Name: cs3343_testcase/resources/
+Sealed: false
+
+Name: cs3343_core/
+Sealed: false
+
+Name: cs3343_core/sorters/
+Sealed: false
+
+Name: cs3343_testcase/core/
+Sealed: false
+
+Name: cs3343_core/resources/
+Sealed: false
+
+Name: cs3343_testcase/console/
+Sealed: false
+
+Name: cs3343_testcase/
+Sealed: false
+
+Name: cs3343_core/console/
+Sealed: false
+
+Name: cs3343_core/node/
+Sealed: false
+
+Name: cs3343_testcase/node/
+Sealed: false
+

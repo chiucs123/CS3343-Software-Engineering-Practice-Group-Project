@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="MS950" standalone="no"?>
+<jardesc>
+    <jar path="D:/Server Service/pydio-core-8.0.1/data/personal/chiucs123/Canvas/Year 3/CS3343 Software Engineering Practice/Group Projects/Releasre/Resource Manager.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/Resource Manager/description.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" manifestLocation="/Resource Manager/manifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+        <sealing sealJar="true">
+            <packagesToSeal>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.console"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.node"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.resources"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.sorters"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.console"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.core"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.node"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.resources"/>
+            </packagesToSeal>
+            <packagesToUnSeal>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.console"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.node"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.resources"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_core.sorters"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.console"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.core"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.node"/>
+                <package handleIdentifier="=Resource Manager/src&lt;cs3343_testcase.resources"/>
+            </packagesToUnSeal>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/Resource Manager/.gitignore"/>
+        <file path="/Resource Manager/.project"/>
+        <javaElement handleIdentifier="=Resource Manager/src"/>
+        <file path="/Resource Manager/.classpath"/>
+    </selectedElements>
+</jardesc>

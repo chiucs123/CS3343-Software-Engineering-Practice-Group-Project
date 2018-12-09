@@ -9,6 +9,7 @@ import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
+@SuppressWarnings("unused")
 public class CmdRemoveNodeTest extends TestCase {
 
 	private int testIndex = 1;

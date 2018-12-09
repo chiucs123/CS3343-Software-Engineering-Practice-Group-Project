@@ -6,7 +6,6 @@ import java.util.List;
 import org.junit.Test;
 
 import cs3343_core.Contacts;
-import cs3343_core.Map;
 import cs3343_core.console.Console;
 import cs3343_core.node.Node;
 import cs3343_core.resources.ResourceManager;

@@ -2,7 +2,6 @@ package cs3343_testcase.resources;
 
 import org.junit.Test;
 
-import cs3343_core.resources.Gas;
 import cs3343_core.resources.Network;
 import junit.framework.TestCase;
 

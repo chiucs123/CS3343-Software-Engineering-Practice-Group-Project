@@ -1,7 +1,5 @@
 package cs3343_testcase.resources;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import cs3343_core.resources.Electricity;

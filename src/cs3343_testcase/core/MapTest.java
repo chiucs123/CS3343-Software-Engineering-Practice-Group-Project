@@ -14,6 +14,7 @@ import cs3343_core.node.Station;
 import cs3343_core.resources.ResourceManager;
 import junit.framework.TestCase;
 
+@SuppressWarnings("unused")
 public class MapTest extends TestCase {
 
 	@Override
