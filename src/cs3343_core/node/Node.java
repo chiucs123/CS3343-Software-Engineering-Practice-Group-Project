@@ -87,5 +87,6 @@ public class Node {
 		Node.instances.clear();
 		Station.instances.clear();
 		Estate.instances.clear();
+		Apartments.instances.clear();
 	}
 }
