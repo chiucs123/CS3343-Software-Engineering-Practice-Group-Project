@@ -146,8 +146,8 @@ public class Contacts {
 	}
 
 	public static void reset() {
-		System.out.println("Contacts size before clearing:"+ contacts.size());
+//		System.out.println("Contacts size before clearing:"+ contacts.size());
 		contacts.clear();
-		System.out.println("Contacts size after clearing:"+ contacts.size());
+//		System.out.println("Contacts size after clearing:"+ contacts.size());
 	}
 }

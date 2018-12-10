@@ -12,6 +12,7 @@ import junit.framework.TestCase;
 public class CmdRemoveContactTest extends TestCase {
 
 	private int testIndex = 1;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -21,8 +22,7 @@ public class CmdRemoveContactTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		Node.reset();
-		Contacts.reset();
+		ResourceManager.reset();
 	}
 
 	@Test

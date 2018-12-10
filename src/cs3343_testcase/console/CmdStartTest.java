@@ -10,6 +10,7 @@ import junit.framework.TestCase;
 
 @SuppressWarnings("unused")
 public class CmdStartTest extends TestCase {
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -19,8 +20,7 @@ public class CmdStartTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		Node.reset();
-		Contacts.reset();
+		ResourceManager.reset();
 	}
 
 	@Test

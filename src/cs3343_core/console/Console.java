@@ -317,4 +317,10 @@ public class Console {
 	private static void resetRedo() {
 		historyUndo.clear();
 	}
+	
+	public static void reset() {
+		historyUndo.clear();
+		historyDone.clear();
+		count = 0;
+	}
 }

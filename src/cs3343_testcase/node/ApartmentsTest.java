@@ -21,8 +21,7 @@ public class ApartmentsTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		Node.reset();
-		Contacts.reset();
+		ResourceManager.reset();
 	}
 
 	@Test

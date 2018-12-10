@@ -82,11 +82,4 @@ public class Node {
 	public boolean equals(Node n) {
 		return this.getIndex() == n.getIndex();
 	}
-
-	public static void reset() {
-		Node.instances.clear();
-		Station.instances.clear();
-		Estate.instances.clear();
-		Apartments.instances.clear();
-	}
 }

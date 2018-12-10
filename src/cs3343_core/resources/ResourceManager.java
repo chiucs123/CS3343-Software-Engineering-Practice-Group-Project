@@ -1,6 +1,12 @@
 package cs3343_core.resources;
 
+import cs3343_core.Contacts;
 import cs3343_core.Map;
+import cs3343_core.console.Console;
+import cs3343_core.node.Apartments;
+import cs3343_core.node.Estate;
+import cs3343_core.node.Node;
+import cs3343_core.node.Station;
 
 public class ResourceManager {
 
@@ -37,5 +43,14 @@ public class ResourceManager {
 
 	public static void getRoute(char from, char to) {
 		System.out.println(Map.getRouteString(from, to));
+	}
+	
+	public static void reset() {
+		Node.instances.clear();
+		Station.instances.clear();
+		Estate.instances.clear();
+		Apartments.instances.clear();
+		Contacts.reset();
+		Console.reset();
 	}
 }
